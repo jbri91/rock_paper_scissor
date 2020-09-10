@@ -5,7 +5,7 @@ let choice = computerList[Math.floor(Math.random() * computerList.length)];
 
 let rock = document
   .getElementById("rock")
-  .addEventListener("click", rockPaperScissor);
+  .addEventListener("click", printConsole);
 
 let paper = document
   .getElementById("paper")
@@ -14,12 +14,17 @@ let paper = document
 let scissor = document
   .getElementById("scissor")
   .addEventListener("click", rockPaperScissor);
-  
+
 userChoice = "rock";
 computerChoice = choice;
 
 console.log(userChoice);
 console.log(computerChoice);
+
+function printConsole(e) {
+    console.log('Hello World');
+}
+
 
 function rockPaperScissor(userChoice, computerChoice) {
   if (userChoice === "rock" && computerChoice === "scissor") {
