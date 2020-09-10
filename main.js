@@ -1,17 +1,15 @@
+let userChoice;
+let computerChoice;
+
 let rock = document.getElementById('rock').addEventListener('click',rockPaperScissor);
 let paper = document.getElementById('paper').addEventListener('click',rockPaperScissor);
 let scissor = document.getElementById('scissor').addEventListener('click', rockPaperScissor);
-function printConsole(e) {
-    console.log('name');
-}
+console.log(rockPaperScissor)
 
-
-
-
-let userChoice;
-let computerChoice;
-console.log(userChoice)
-console.log(computerChoice)
+// computerChoice = 'rock'
+// userChoice = 'rock'
+// console.log(userChoice)
+// console.log(computerChoice)
 
 
 function rockPaperScissor(userChoice,computerChoice) {
@@ -19,7 +17,7 @@ function rockPaperScissor(userChoice,computerChoice) {
         document.getElementById('results').innerHTML = 'YOU WIN!';
     }
     if (userChoice === 'rock' && computerChoice === 'rock'){
-        document.getElementById('results').innerHTML = 'YOU ARE TIRED!';
+        document.getElementById('results').innerHTML = 'YOU ARE TIED!';
     }
     if (userChoice === 'rock' && computerChoice === 'paper'){
         document.getElementById('results').innerHTML = 'YOU LOSE!';
@@ -28,7 +26,7 @@ function rockPaperScissor(userChoice,computerChoice) {
         document.getElementById('results').innerHTML = 'YOU WIN!';
     }
     if(userChoice === 'paper' && computerChoice === 'paper') {
-        document.getElementById('results').innerHTML = 'YOU ARE TIRED!';
+        document.getElementById('results').innerHTML = 'YOU ARE TIED!';
     }
     if(userChoice === 'paper' && computerChoice === 'scissor') {
         document.getElementById('results').innerHTML = 'YOU LOSE!';
@@ -38,13 +36,13 @@ function rockPaperScissor(userChoice,computerChoice) {
     }
     
     if(userChoice === 'scissor' && computerChoice === 'scissor') {
-        document.getElementById('results').innerHTML = 'YOU ARE TIRED!';
+        document.getElementById('results').innerHTML = 'YOU ARE TIED!';
     }
     
     if(userChoice === 'scissor' && computerChoice === 'rock') {
         document.getElementById('results').innerHTML = 'YOU LOSE!';
     }
-    if (userChoice === undefined) 
+    if (userChoice === undefined || computerChoice === undefined) 
     {document.getElementById('results').innerHTML = 'PICK A WEAPON!'}
 }
 
