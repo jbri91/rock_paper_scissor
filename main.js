@@ -33,11 +33,7 @@ let scissor = document
 function rockPaperScissor(userChoice, computerChoice) {
   let score = 0;
   let results = document.getElementById("results").innerHTML;
-  if (results === 'YOU WIN!') {
-    score++;
-    document.getElementById('score').innerHTML = 'Score: ' + score; 
-    console.log(results);
-  }
+
   document.getElementById("yourChoice").innerHTML =
     "You Chose: " + userChoice.toUpperCase();
   document.getElementById("computerChooses").innerHTML =
@@ -73,9 +69,11 @@ function rockPaperScissor(userChoice, computerChoice) {
   if (userChoice === "scissor" && computerChoice === "rock") {
     document.getElementById("results").innerHTML = "YOU LOSE!";
   }
-  if (userChoice === undefined || computerChoice === undefined) {
-    document.getElementById("results").innerHTML = "PICK A WEAPON!";
+  if (results === "YOU WIN!") {
+    score++
+    document.getElementById('score').innerHTML = 'Score: ' + score; 
   }
+  console.log(results);
 }
 
 // Keep track of score
