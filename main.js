@@ -33,11 +33,16 @@ let scissor = document
 function rockPaperScissor(userChoice, computerChoice) {
   let score = 0;
   let results = document.getElementById("results").innerHTML;
-
+  if (results === 'YOU WIN!') {
+    score++;
+    document.getElementById('score').innerHTML = 'Score: ' + score; 
+    console.log(results);
+  }
   document.getElementById("yourChoice").innerHTML =
     "You Chose: " + userChoice.toUpperCase();
   document.getElementById("computerChooses").innerHTML =
     "The Computer Chose: " + computerChoice.toUpperCase();
+
 
   if (userChoice === "rock" && computerChoice === "scissor") {
     document.getElementById("results").innerHTML = "YOU WIN!";
@@ -70,11 +75,6 @@ function rockPaperScissor(userChoice, computerChoice) {
   }
   if (userChoice === undefined || computerChoice === undefined) {
     document.getElementById("results").innerHTML = "PICK A WEAPON!";
-  }
-  if (results === 'YOU WIN!') {
-    score++;
-    document.getElementById('score').innerHTML = 'Score: ' + score; 
-    console.log(results);
   }
 }
 
