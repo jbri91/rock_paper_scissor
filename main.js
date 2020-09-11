@@ -39,7 +39,6 @@ function rockPaperScissor(userChoice, computerChoice) {
   document.getElementById("computerChooses").innerHTML =
     "The Computer Chose: " + computerChoice.toUpperCase();
 
-
   if (userChoice === "rock" && computerChoice === "scissor") {
     document.getElementById("results").innerHTML = "YOU WIN!";
   }
@@ -70,8 +69,8 @@ function rockPaperScissor(userChoice, computerChoice) {
     document.getElementById("results").innerHTML = "YOU LOSE!";
   }
   if (results === "YOU WIN!") {
-    score++
-    document.getElementById('score').innerHTML = 'Score: ' + score; 
+    score++;
+    document.getElementById("score").innerHTML = "Score: " + score;
   }
   console.log(results);
 }
