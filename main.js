@@ -5,28 +5,34 @@ let choice = computerList[Math.floor(Math.random() * computerList.length)];
 
 let rock = document
   .getElementById("rock")
-  .addEventListener("click", printConsole);
+  .addEventListener("click", function(e) {
+    rockPaperScissor(e.target.id,computerList[Math.floor(Math.random() * computerList.length)] );
+  });
 
 let paper = document
   .getElementById("paper")
-  .addEventListener("click", rockPaperScissor);
+  .addEventListener("click", function(e) {
+    rockPaperScissor(e.target.id, computerList[Math.floor(Math.random() * computerList.length)] );
+  });
 
 let scissor = document
   .getElementById("scissor")
-  .addEventListener("click", rockPaperScissor);
+  .addEventListener("click", function(e) {
+    rockPaperScissor(e.target.id, computerList[Math.floor(Math.random() * computerList.length)] );
+  });
 
-userChoice = "rock";
-computerChoice = choice;
+// userChoice = "rock";
+// computerChoice = choice;
+  
+// console.log(userChoice);
+// console.log(computerChoice);
 
-console.log(userChoice);
-console.log(computerChoice);
-
-function printConsole(e) {
-    console.log('Hello World');
-}
 
 
 function rockPaperScissor(userChoice, computerChoice) {
+  document.getElementById('computerChooses').innerHTML = computerChoice.toUpperCase();
+  document.getElementById('yourChoice').innerHTML = userChoice.toUpperCase();
+
   if (userChoice === "rock" && computerChoice === "scissor") {
     document.getElementById("results").innerHTML = "YOU WIN!";
   }
@@ -61,7 +67,10 @@ function rockPaperScissor(userChoice, computerChoice) {
   }
 }
 
-rockPaperScissor(userChoice, computerChoice);
+
+// let computerChooses = document.getElementById('computerChooses').innerHTML = computerChoice;
+
+// rockPaperScissor(userChoice, computerChoice);
 
 // computer randomly picks rock, paper or scissor. Perhaps from list?
 // user picks rock, paper or scissor
