@@ -44,7 +44,6 @@ function rockPaperScissor(userChoice, computerChoice) {
     score++;
     document.getElementById("results").innerHTML = "YOU WIN!";
     document.getElementById("results").style.color = "green";
-    score++;
   }
   if (userChoice === "rock" && computerChoice === "rock") {
     document.getElementById("results").innerHTML = "YOU ARE TIED!";
@@ -59,7 +58,6 @@ function rockPaperScissor(userChoice, computerChoice) {
     score++;
     document.getElementById("results").innerHTML = "YOU WIN!";
     document.getElementById("results").style.color = "green";
-    score++;
   }
   if (userChoice === "paper" && computerChoice === "paper") {
     document.getElementById("results").innerHTML = "YOU ARE TIED!";
@@ -74,7 +72,6 @@ function rockPaperScissor(userChoice, computerChoice) {
     score++;
     document.getElementById("results").innerHTML = "YOU WIN!";
     document.getElementById("results").style.color = "green";
-    score++;
   }
 
   if (userChoice === "scissor" && computerChoice === "scissor") {
