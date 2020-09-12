@@ -81,6 +81,9 @@ function rockPaperScissor(userChoice, computerChoice) {
     document.getElementById("results").innerHTML = "YOU LOSE!";
     document.getElementById("results").style.color = "red";
   }
+  if (results === 'YOU WIN!') {document.getElementById("score").innerHTML = "Your     Score: " + score;
+    console.log(results);
+  }
   if (results === "YOU LOSE!") {
     computerScore++;
     document.getElementById("computerScore").innerHTML =
@@ -99,8 +102,5 @@ function rockPaperScissor(userChoice, computerChoice) {
   if (score === computerScore) {
     document.getElementById("computerScore").style.color = "yellow";
     document.getElementById("score").style.color = "yellow";
-  }
-  document.getElementById("score").innerHTML = "Your Score: " + score;
-    console.log(results);
   }
 }
