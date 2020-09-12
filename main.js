@@ -42,41 +42,41 @@ function rockPaperScissor(userChoice, computerChoice) {
 
   if (userChoice === "rock" && computerChoice === "scissor") {
     document.getElementById("results").innerHTML = "YOU WIN!";
-    document.getElementById('results').style.color = 'green';
+    document.getElementById("results").style.color = "green";
   }
   if (userChoice === "rock" && computerChoice === "rock") {
     document.getElementById("results").innerHTML = "YOU ARE TIED!";
-    document.getElementById('results').style.color = 'yellow';
+    document.getElementById("results").style.color = "yellow";
   }
   if (userChoice === "rock" && computerChoice === "paper") {
     document.getElementById("results").innerHTML = "YOU LOSE!";
-    document.getElementById('results').style.color = 'red';
+    document.getElementById("results").style.color = "red";
   }
   if (userChoice === "paper" && computerChoice === "rock") {
     document.getElementById("results").innerHTML = "YOU WIN!";
-    document.getElementById('results').style.color = 'green';
+    document.getElementById("results").style.color = "green";
   }
   if (userChoice === "paper" && computerChoice === "paper") {
     document.getElementById("results").innerHTML = "YOU ARE TIED!";
-    document.getElementById('results').style.color = 'yellow';
+    document.getElementById("results").style.color = "yellow";
   }
   if (userChoice === "paper" && computerChoice === "scissor") {
     document.getElementById("results").innerHTML = "YOU LOSE!";
-    document.getElementById('results').style.color = 'red';
+    document.getElementById("results").style.color = "red";
   }
   if (userChoice === "scissor" && computerChoice === "paper") {
     document.getElementById("results").innerHTML = "YOU WIN!";
-    document.getElementById('results').style.color = 'green';
+    document.getElementById("results").style.color = "green";
   }
 
   if (userChoice === "scissor" && computerChoice === "scissor") {
     document.getElementById("results").innerHTML = "YOU ARE TIED!";
-    document.getElementById('results').style.color = 'yellow';
+    document.getElementById("results").style.color = "yellow";
   }
 
   if (userChoice === "scissor" && computerChoice === "rock") {
     document.getElementById("results").innerHTML = "YOU LOSE!";
-    document.getElementById('results').style.color = 'red';
+    document.getElementById("results").style.color = "red";
   }
   if (results === "YOU WIN!") {
     score++;
@@ -85,23 +85,21 @@ function rockPaperScissor(userChoice, computerChoice) {
   }
   if (results === "YOU LOSE!") {
     computerScore++;
-    document.getElementById('computerScore').innerHTML = "The Computer's Score: " + computerScore;
+    document.getElementById("computerScore").innerHTML =
+      "The Computer's Score: " + computerScore;
   }
-    if (computerScore > score) {
-    document.getElementById('computerScore').style.color = 'green';
+  if (computerScore > score) {
+    document.getElementById("computerScore").style.color = "green";
   } else {
-    document.getElementById('computerScore').style.color = 'red';
+    document.getElementById("computerScore").style.color = "red";
   }
   if (score > computerScore) {
-    document.getElementById('score').style.color = 'green';
+    document.getElementById("score").style.color = "green";
   } else {
-    document.getElementById('score').style.color = 'red';
+    document.getElementById("score").style.color = "red";
   }
   if (score === computerScore) {
-    document.getElementById('computerScore').style.color = 'yellow';
-    document.getElementById('score').style.color = 'yellow';
-  } 
+    document.getElementById("computerScore").style.color = "yellow";
+    document.getElementById("score").style.color = "yellow";
+  }
 }
-
-
-
