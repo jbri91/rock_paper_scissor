@@ -1,9 +1,9 @@
-#Rock, Paper, Scissor 
+# Rock, Paper, Scissor 
 
 Classic rock, paper, scissor game created with HTML, CSS and JavaScript
 
-Click [here](https://jbri91.github.io/todo_list_app/) if you have what it takes to defeat the computer!
- 
+Click [here](images/Rock,Paper,Scissor.png) if you have what it takes to defeat the computer!
+
 ![TodoApp](https://github.com/jbri91/todo_list_app/blob/master/To%20Do%20App.png?raw=true)
 
 # Summary
