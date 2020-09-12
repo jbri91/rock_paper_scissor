@@ -93,6 +93,10 @@ function rockPaperScissor(userChoice, computerChoice) {
   { document.getElementById("computerScore").innerHTML =
       "The Computer's Score: " + computerScore;
   }
+  colorChange();
+}
+
+function colorChange() {
   if (computerScore > score) {
     document.getElementById("computerScore").style.color = "green";
   } else {
