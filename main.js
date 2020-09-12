@@ -43,6 +43,7 @@ function rockPaperScissor(userChoice, computerChoice) {
   if (userChoice === "rock" && computerChoice === "scissor") {
     document.getElementById("results").innerHTML = "YOU WIN!";
     document.getElementById("results").style.color = "green";
+    score++;
   }
   if (userChoice === "rock" && computerChoice === "rock") {
     document.getElementById("results").innerHTML = "YOU ARE TIED!";
@@ -51,10 +52,12 @@ function rockPaperScissor(userChoice, computerChoice) {
   if (userChoice === "rock" && computerChoice === "paper") {
     document.getElementById("results").innerHTML = "YOU LOSE!";
     document.getElementById("results").style.color = "red";
+    computerScore++;
   }
   if (userChoice === "paper" && computerChoice === "rock") {
     document.getElementById("results").innerHTML = "YOU WIN!";
     document.getElementById("results").style.color = "green";
+    score++;
   }
   if (userChoice === "paper" && computerChoice === "paper") {
     document.getElementById("results").innerHTML = "YOU ARE TIED!";
@@ -63,10 +66,12 @@ function rockPaperScissor(userChoice, computerChoice) {
   if (userChoice === "paper" && computerChoice === "scissor") {
     document.getElementById("results").innerHTML = "YOU LOSE!";
     document.getElementById("results").style.color = "red";
+    computerScore++;
   }
   if (userChoice === "scissor" && computerChoice === "paper") {
     document.getElementById("results").innerHTML = "YOU WIN!";
     document.getElementById("results").style.color = "green";
+    score++;
   }
 
   if (userChoice === "scissor" && computerChoice === "scissor") {
@@ -77,15 +82,12 @@ function rockPaperScissor(userChoice, computerChoice) {
   if (userChoice === "scissor" && computerChoice === "rock") {
     document.getElementById("results").innerHTML = "YOU LOSE!";
     document.getElementById("results").style.color = "red";
+    computerScore++;
   }
-  if (results === "YOU WIN!") {
-    score++;
-    document.getElementById("score").innerHTML = "Your Score: " + score;
+  {document.getElementById("score").innerHTML = "Your Score: " + score;
     console.log(results);
   }
-  if (results === "YOU LOSE!") {
-    computerScore++;
-    document.getElementById("computerScore").innerHTML =
+  { document.getElementById("computerScore").innerHTML =
       "The Computer's Score: " + computerScore;
   }
   if (computerScore > score) {
