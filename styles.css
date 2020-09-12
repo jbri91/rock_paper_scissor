@@ -45,3 +45,9 @@ div {
   font-size: 25px;
   text-align: center;
 }
+
+#results {
+  color:darkblue;
+  font-family: "Lucida Console", Courier, monospace;
+  font-size: 60px;
+}
