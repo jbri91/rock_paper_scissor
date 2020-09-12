@@ -1,4 +1,4 @@
-# Rock, Paper, Scissor 
+# Rock, Paper, Scissors 
 
 Classic rock, paper, scissor game created with HTML, CSS and JavaScript
 
