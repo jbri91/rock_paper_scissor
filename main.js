@@ -16,6 +16,7 @@ function computerChoice() {
 
 let score = 0;
 let computerScore = 0;
+
 function rockPaperScissor(userChoice, computerChoice) {
   let results = document.getElementById("results");
   document.getElementById("yourChoice").innerHTML =
@@ -57,18 +58,21 @@ function rockPaperScissor(userChoice, computerChoice) {
 }
 
 function colorChange() {
+  let computerColor = document.getElementById("computerScore");
+  let myColor = document.getElementById('score');
+
   if (computerScore > score) {
-    document.getElementById("computerScore").style.color = "green";
+    computerColor.style.color = "green";
   } else {
-    document.getElementById("computerScore").style.color = "red";
+    computerColor.style.color = "red";
   }
   if (score > computerScore) {
-    document.getElementById("score").style.color = "green";
+    myColor.style.color = "green";
   } else {
-    document.getElementById("score").style.color = "red";
+    myColor.style.color = "red";
   }
   if (score === computerScore) {
-    document.getElementById("computerScore").style.color = "yellow";
-    document.getElementById("score").style.color = "yellow";
+    computerColor.style.color = "yellow";
+    myColor.style.color = "yellow";
   }
 }
