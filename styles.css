@@ -7,36 +7,40 @@ h1 {
   font-size: 50px;
 }
 
-#game {
-  border-width: 0px;
-  margin: -70px;
-  padding-left: 410px;
-  width: 25%;
-  height: 35%;
+.main-game-board {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  max-height: 108vh;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-container {
+#game {
+  align-self: center;
+  width: 40%;
+  height: 40%;
+}
+
+.container {
   display: flex;
-  padding-top: 100px;
-  padding-left: 100px;
 }
 
 #rock {
-  display: flex;
   width: 25%;
   height: 25%;
   padding-right: 60px;
 }
 
 #paper {
-  display: flex;
   width: 25%;
   height: 25%;
   padding-right: 60px;
 }
 
 #scissor {
-  display: flex;
   width: 25%;
   height: 25%;
 }

@@ -1,95 +1,58 @@
-let userChoice;
-let computerChoice;
-let computerList = ["rock", "paper", "scissor"];
-let choice = computerList[Math.floor(Math.random() * computerList.length)];
+document.getElementById("rock").addEventListener("click", function (e) {
+  rockPaperScissor(e.target.id, computerChoice());
+});
+document.getElementById("paper").addEventListener("click", function (e) {
+  rockPaperScissor(e.target.id, computerChoice());
+});
+document.getElementById("scissor").addEventListener("click", function (e) {
+  rockPaperScissor(e.target.id, computerChoice());
+});
+
+function computerChoice() {
+  let computerList = ["rock", "paper", "scissor"];
+  let choice = computerList[Math.floor(Math.random() * computerList.length)];
+  return choice;
+}
+
 let score = 0;
 let computerScore = 0;
-
-let rock = document
-  .getElementById("rock")
-  .addEventListener("click", function (e) {
-    rockPaperScissor(
-      e.target.id,
-      computerList[Math.floor(Math.random() * computerList.length)]
-    );
-  });
-
-let paper = document
-  .getElementById("paper")
-  .addEventListener("click", function (e) {
-    rockPaperScissor(
-      e.target.id,
-      computerList[Math.floor(Math.random() * computerList.length)]
-    );
-  });
-
-let scissor = document
-  .getElementById("scissor")
-  .addEventListener("click", function (e) {
-    rockPaperScissor(
-      e.target.id,
-      computerList[Math.floor(Math.random() * computerList.length)]
-    );
-  });
-
 function rockPaperScissor(userChoice, computerChoice) {
-  let results = document.getElementById("results").innerHTML;
-
+  let results = document.getElementById("results");
   document.getElementById("yourChoice").innerHTML =
     "You Chose: " + userChoice.toUpperCase();
   document.getElementById("computerChooses").innerHTML =
     "The Computer Chose: " + computerChoice.toUpperCase();
 
-  if (userChoice === "rock" && computerChoice === "scissor") {
-    score++;
-    document.getElementById("results").innerHTML = "YOU WIN!";
-    document.getElementById("results").style.color = "green";
-  }
-  if (userChoice === "rock" && computerChoice === "rock") {
-    document.getElementById("results").innerHTML = "YOU ARE TIED!";
-    document.getElementById("results").style.color = "yellow";
-  }
-  if (userChoice === "rock" && computerChoice === "paper") {
-    document.getElementById("results").innerHTML = "YOU LOSE!";
-    document.getElementById("results").style.color = "red";
-    computerScore++;
-  }
-  if (userChoice === "paper" && computerChoice === "rock") {
-    score++;
-    document.getElementById("results").innerHTML = "YOU WIN!";
-    document.getElementById("results").style.color = "green";
-  }
-  if (userChoice === "paper" && computerChoice === "paper") {
-    document.getElementById("results").innerHTML = "YOU ARE TIED!";
-    document.getElementById("results").style.color = "yellow";
-  }
-  if (userChoice === "paper" && computerChoice === "scissor") {
-    document.getElementById("results").innerHTML = "YOU LOSE!";
-    document.getElementById("results").style.color = "red";
-    computerScore++;
-  }
-  if (userChoice === "scissor" && computerChoice === "paper") {
-    score++;
-    document.getElementById("results").innerHTML = "YOU WIN!";
-    document.getElementById("results").style.color = "green";
-  }
+  const userChoseRock = userChoice === "rock";
+  const userChosePaper = userChoice === "paper";
+  const userChoseScissors = userChoice === "scissor";
+  const computerChoseRock = computerChoice == "rock";
+  const computerChosePaper = computerChoice == "paper";
+  const computerChoseScissors = computerChoice == "scissor";
 
-  if (userChoice === "scissor" && computerChoice === "scissor") {
-    document.getElementById("results").innerHTML = "YOU ARE TIED!";
-    document.getElementById("results").style.color = "yellow";
-  }
-
-  if (userChoice === "scissor" && computerChoice === "rock") {
-    document.getElementById("results").innerHTML = "YOU LOSE!";
-    document.getElementById("results").style.color = "red";
+  if (
+    (userChoseRock && computerChoseScissors) ||
+    (userChosePaper && computerChoseRock) ||
+    (userChoseScissors && computerChosePaper)
+  ) {
+    results.innerHTML = "YOU WIN!";
+    results.style.color = "green";
+    score++;
+  } else if (
+    (userChosePaper && computerChoseScissors) ||
+    (userChoseScissors && computerChoseRock) ||
+    (userChoseRock && computerChosePaper)
+  ) {
+    results.innerHTML = "YOU LOSE!";
+    results.style.color = "red";
     computerScore++;
+  } else {
+    results.innerHTML = "YOU ARE TIED!";
+    results.style.color = "yellow";
   }
-  {document.getElementById("score").innerHTML = "Your Score: " + score;
-    console.log(results);
-  }
-  { document.getElementById("computerScore").innerHTML =
-      "The Computer's Score: " + computerScore;
-  }
+  document.getElementById("score").innerHTML = "Your Score: " + score;
+  document.getElementById("computerScore").innerHTML =
+    "The Computer's Score: " + computerScore;
   colorChange();
 }
 
