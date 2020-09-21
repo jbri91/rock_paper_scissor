@@ -54,10 +54,10 @@ function rockPaperScissor(userChoice, computerChoice) {
   document.getElementById("score").innerHTML = "Your Score: " + score;
   document.getElementById("computerScore").innerHTML =
     "The Computer's Score: " + computerScore;
-  colorChange();
+  scoreColorChange();
 }
 
-function colorChange() {
+function scoreColorChange() {
   let computerColor = document.getElementById("computerScore");
   let myColor = document.getElementById('score');
 
